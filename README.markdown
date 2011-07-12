@@ -8,7 +8,7 @@ at Hulu.com.
 
 Benefits:
 
-* You won't have to manually toggle your sound to mute those darn commercials
+* You won't have to manually toggle your sound to mute those awesome commercials
 * The sound comes back on right on cue
 * Hulu still gets their ad impressions registered: it's as if you paid attention to them
 

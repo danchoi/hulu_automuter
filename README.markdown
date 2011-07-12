@@ -92,7 +92,7 @@ If you know of more, feel free to let me know, or add it to the
 
 A good question. 
 
-Let me point you to a blog post by Doc Searls [answer][docsearls].
+Let me point you to a [blog post by Doc Searls][docsearls].
 
 [docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 

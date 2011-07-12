@@ -1,9 +1,8 @@
 # Hulu Automuter
 
 
-Hulu Automuter automatically mutes your computer when a commercial comes on
-while you're watching content at Hulu.com. It automatically unmutes your computer
-when the content resumes.
+Hulu Automuter automatically mutes your computer while a commercial is playing
+at Hulu.com.
 
 [screenshots]
 

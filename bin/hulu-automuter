@@ -82,7 +82,7 @@ by Daniel Choi <dhchoi@gmail.com>
 
 Usage: 
 
-  hulu-automuter [ -p port ]
+    hulu-automuter [ -p port ]
 
 -p [port]   proxy port to use (default: 8123)
 -v          print version number

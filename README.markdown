@@ -24,8 +24,9 @@ Benefits:
 
     gem install hulu-automuter
 
-If you get an error message saying that hulu-automuter is missing, then you
-probably have a `PATH` issue. Try one of these workarounds:
+Confirm that the installation succeeded by typing `hulu-automuter -h`.  If you
+get an error message saying that hulu-automuter is missing, then you probably
+have a `PATH` issue. Try one of these workarounds:
 
 * Put the directory where Rubygems installs executables on your `PATH`
 * Try installing with `sudo gem install hulu-automuter`

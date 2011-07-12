@@ -38,7 +38,7 @@ end
 desc "build webpage"
 task :build_webpage do
   `cp README.markdown ../project-webpages/src/hulu_automuter.README.markdown`
-  # `cp coverage.markdown ../project-webpages/src/hulu_automuter.coverage.markdown`
+  `cp coverage.markdown ../project-webpages/src/hulu_automuter.coverage.markdown`
   Dir.chdir "../project-webpages" do
     puts `ruby gen.rb hulu_automuter #{HuluAutomuter::VERSION}`
     `open out/hulu_automuter.html`

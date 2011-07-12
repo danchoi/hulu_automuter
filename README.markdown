@@ -96,7 +96,7 @@ Let me point you to a [blog post by Doc Searls][docsearls].
 
 [docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 
-Think of Hulu Automuter as a step toward the revolution that Doc Searls is
+Think of Hulu Automuter as a tiny step toward the revolution that Doc Searls is
 talking about.
 
 Having to trade bits of your precious time, attention, and brain waves to watch

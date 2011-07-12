@@ -64,7 +64,7 @@ forth when you want to use Hulu Automuter and then return to normal web
 browsing, try one of these tips:
 
 * See if your browser or your OS has a "Create Location" feature that lets you
-  save your HTTP proxy configurations and choose and active them from a drop-down selector.
+  save your HTTP proxy configurations as "Location" that you can choose from a drop-down.
 * Use one web browser program for general web browsing, and another web browser 
   for HTTP proxying via port 8123.  
 

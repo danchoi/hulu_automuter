@@ -96,10 +96,17 @@ proxyproc = Proc.new{|req,res|
   end
   nil
 }
+
 $stderr = File.new('/dev/null', 'w')
-s = WEBrick::HTTPProxyServer.new(:Port => port, 
-                                 :BindAddress => '0.0.0.0',
-                                 :RequestCallback => proxyproc)
+
+begin
+  s = WEBrick::HTTPProxyServer.new(:Port => port, 
+                                   :BindAddress => '0.0.0.0',
+                                   :RequestCallback => proxyproc)
+rescue 
+  $stderr = STDERR
+  raise
+end
 trap("INT"){s.shutdown}
 
 puts "HuluAutomuter is starting on port #{port}"

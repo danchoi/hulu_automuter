@@ -32,6 +32,7 @@ probably have a `PATH` issue. Try one of these workarounds:
 
 To upgrade Hulu Automuter to a newer version, just repeat the installation procedure.
 
+
 ## Usage
 
     hulu-automuter [ -p port ]
@@ -54,6 +55,24 @@ Then you can start hulu-automuter and go to hulu.com in your configured web
 browser.
 
 Press `CTRL-c` to stop hulu-automuter.
+
+
+## Tip
+
+If you don't want to keep changing your web browser proxy settings repeatedly
+when you want to use Hulu Automuter, try one of these tips:
+
+* See if your browser or your OS has a "Create Location" feature that lets you
+  save your HTTP proxy configurations and activate one from a drop down selector.
+* Use one web browser program for general web browsing, and another web browser 
+  for HTTP proxying via port 8123.  
+
+There are also sure to be scripts out there that let you change your HTTP proxy
+settings from the command line. If you know of one, feel free to add it to the
+[wiki](https://github.com/danchoi/hulu_automuter/wiki).
+
+You can also browse the rest of the web with Hulu Automuter as your HTTP Proxy,
+but you may run browser issues with certain web sites, like YouTube.com. 
 
 
 ## Bug reports and feature requests

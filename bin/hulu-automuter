@@ -88,6 +88,7 @@ hc = case RUBY_PLATFORM
 
 proxyproc = Proc.new{|req,res| 
   r = req.path
+  next unless req.host =~ /hulu\.com/
   if r =~ /adload/ 
     $stdout.puts ["ad loaded", hc.mute].join(', ')
     `#{hc.mute}`

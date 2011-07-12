@@ -88,6 +88,18 @@ If you know of more, feel free to let me know, or add it to the
 [wiki](https://github.com/danchoi/hulu_automuter/wiki).
 
 
+## Is it unfair to Hulu?
+
+A good question. 
+
+I will let Doc Searls [answer][docsearls].
+
+[docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
+
+Think of Hulu Automuter as a step toward the revolution that Doc Searls is
+talking about.
+
+
 ## Bug reports and feature requests
 
 Please submit these at either of these places:

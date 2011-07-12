@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "hulu_automuter/version"
 
 Gem::Specification.new do |s|
-  s.name        = "hulu_automuter"
+  s.name        = "hulu-automuter"
   s.version     = HuluAutomuter::VERSION
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.8.6'

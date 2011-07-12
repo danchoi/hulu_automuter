@@ -73,9 +73,6 @@ There are also sure to be scripts out there that let you change your HTTP proxy
 settings from the command line. If you know of one, feel free to add it to the
 [wiki](https://github.com/danchoi/hulu_automuter/wiki).
 
-You can also browse the rest of the web with Hulu Automuter as your HTTP Proxy,
-but you may run browser issues with certain web sites, like YouTube.com. 
-
 
 ## Bug reports and feature requests
 

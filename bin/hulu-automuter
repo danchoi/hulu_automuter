@@ -77,6 +77,8 @@ puts "Press CTRL-C to stop"
 
 s.start
 
+puts "Done"
+
 __END__
 ----------------------------------------
 Hulu Automuter 

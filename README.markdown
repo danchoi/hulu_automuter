@@ -44,7 +44,7 @@ To upgrade Hulu Automuter to a newer version, just repeat the installation proce
 To use hulu-automuter, you need to configure the web browser you want to use
 for watching Hulu to use hulu-automuter as its HTTP proxy.
 
-Configure the HTTP proxy setting in your web browser network proxy preferences
+Configure the HTTP proxy setting in your web browser's network proxy preferences
 to localhost:proxy-port.
 
 For example, if you want to use the default, you should set your browser to use

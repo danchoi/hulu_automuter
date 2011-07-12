@@ -101,7 +101,10 @@ talking about.
 
 Having to trade bits of your precious time, attention, and brain waves to watch
 TV shows feels clumsy and backward on many levels, including the human one. I
-would rather pay per view, if Hulu gave that option.
+would rather pay per view, if Hulu gave that option.  In any case, you should
+be able to control your computer's volume level any way you see fit, even with
+the assistance of open source software you choose to download and install.
+The computer belongs to you, not to Hulu, not to advertisers.
 
 
 ## Bug reports and feature requests

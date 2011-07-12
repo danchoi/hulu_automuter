@@ -33,6 +33,9 @@ have a `PATH` issue. Try one of these workarounds:
 
 To upgrade Hulu Automuter to a newer version, just repeat the installation procedure.
 
+**Mac Wrapper App:** Some people have requested a Mac OS X wrapper app for
+this, for users who are intimidated by the Unix command line. This wrapper app
+should be available by the end of this week.
 
 ## Usage
 
@@ -74,8 +77,14 @@ browsing, try one of these tips:
 [polipo]: http://www.pps.jussieu.fr/~jch/software/polipo/
 [privoxy]: http://www.privoxy.org/
 
-There are also sure to be scripts out there that let you change your HTTP proxy
-settings from the command line. If you know of one, feel free to add it to the
+There are scripts and extensions out there that let you change your HTTP proxy
+settings more easily.
+
+* [Proxy Switchy][switchy] for Google Chrome
+
+[switchy]: https://chrome.google.com/webstore/detail/caehdcpeofiiigpdhbabniblemipncjj
+
+If you know of more, feel free to let me know, or add it to the
 [wiki](https://github.com/danchoi/hulu_automuter/wiki).
 
 

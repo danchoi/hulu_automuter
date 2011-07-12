@@ -16,7 +16,7 @@ Benefits:
 ## Prerequisites
 
 * Ruby 1.8.6 or higher (developed on Ruby 1.9.2)
-* OS X or Linux with `amixer` installed
+* OS X, or Linux with `amixer` installed
 * a web browser you can configure to use an HTTP proxy (e.g. Chrome, Firefox)
 
 

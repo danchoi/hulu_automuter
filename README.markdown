@@ -57,7 +57,7 @@ browser.
 Press `CTRL-c` to stop hulu-automuter.
 
 
-## Tip
+## Tips
 
 If you don't want to keep changing your web browser proxy settings repeatedly
 when you want to use Hulu Automuter, try one of these tips:

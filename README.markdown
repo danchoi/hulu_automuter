@@ -61,7 +61,7 @@ Press `CTRL-c` to stop hulu-automuter.
 Please submit these at either of these places:
 
 * <https://github.com/danchoi/hulu_automuter/issues>
-* <http://groups.google.com/group/hulu-automuter_users>
+* <http://groups.google.com/group/hulu_automuter-users>
 
 
 ## About the developer

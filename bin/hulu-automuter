@@ -6,12 +6,39 @@ require 'hulu_automuter/version'
 
 port = 8123
 
+help = <<END
+
+----------------------------------------
+Hulu Automuter 
+by Daniel Choi <dhchoi@gmail.com>
+
+Usage: 
+
+    hulu-automuter [ -p port ]
+
+-p [port]   proxy port to use (default: 8123)
+-v          print version number
+
+To use hulu-automuter, you need to configure the web browser you want to use
+for watching Hulu to use hulu-automuter as its HTTP proxy.
+
+Configure the HTTP proxy setting in your web browser network proxy preferences
+to localhost:proxy-port.
+
+For example, if you want to use the default, you should set your browser to use
+a HTTP proxy at localhost:8123.
+
+Then you can start hulu-automuter and go to hulu.com in your configured web
+browser.
+
+END
+
 if ARGV.first =~ /-p/
   port = ARGV[1] || 8123
 elsif ARGV.first =~ /-v/
   puts "HuluAutomuter v#{HuluAutomuter::VERSION}"
 elsif ARGV.first =~ /-h/
-  puts DATA.read
+  puts help
   exit
 end
 
@@ -82,29 +109,4 @@ puts "Press CTRL-C to stop"
 s.start
 
 puts "Done"
-
-__END__
-----------------------------------------
-Hulu Automuter 
-by Daniel Choi <dhchoi@gmail.com>
-
-Usage: 
-
-    hulu-automuter [ -p port ]
-
--p [port]   proxy port to use (default: 8123)
--v          print version number
-
-To use hulu-automuter, you need to configure the web browser you want to use
-for watching Hulu to use hulu-automuter as its HTTP proxy.
-
-Configure the HTTP proxy setting in your web browser network proxy preferences
-to localhost:proxy-port.
-
-For example, if you want to use the default, you should set your browser to use
-a HTTP proxy at localhost:8123.
-
-Then you can start hulu-automuter and go to hulu.com in your configured web
-browser.
-
 

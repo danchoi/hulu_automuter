@@ -9,7 +9,7 @@ port = 8123
 help = <<END
 
 ----------------------------------------
-Hulu Automuter 
+Hulu Automuter v#{HuluAutomuter::VERSION}
 by Daniel Choi <dhchoi@gmail.com>
 
 Usage: 
@@ -37,6 +37,7 @@ if ARGV.first =~ /-p/
   port = ARGV[1] || 8123
 elsif ARGV.first =~ /-v/
   puts "HuluAutomuter v#{HuluAutomuter::VERSION}"
+  exit
 elsif ARGV.first =~ /-h/
   puts help
   exit

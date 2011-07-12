@@ -92,12 +92,16 @@ If you know of more, feel free to let me know, or add it to the
 
 A good question. 
 
-I will let Doc Searls [answer][docsearls].
+Let me point you to a blog post by Doc Searls [answer][docsearls].
 
 [docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 
 Think of Hulu Automuter as a step toward the revolution that Doc Searls is
 talking about.
+
+Having to trade bits of your precious time, attention, and brain waves to watch
+TV shows feels clumsy and backward on many levels, including the human one. I
+would rather pay per view, if Hulu gave that option.
 
 
 ## Bug reports and feature requests

@@ -1,0 +1,217 @@
+t2.hulu.com/v3/rvenue
+contentplaybackresume
+t2.hulu.com/potentialbugtracking
+
+
+getPlaylist
+p.hulu.com/Default.aspx
+
+adload
+t2.hulu.com/v3/playertracking
+
+
+
+------------------------------------------------------------------------
+Mon Jul 11 07:44:00 EDT 2011
+
+
+Search hulu.js for continousPlayCountdownStarted
+
+Use this
+http://jsbeautifier.org/
+
+output:
+js/pretty.js
+
+
+    if (pid == currentPid && $('player') && $('player').seekAndPlay(t)) {
+        $('player').scrollTo();
+            $('player').pauseVideo();
+
+                player.style.visibility = "visible";
+
+
+            $('player').playVideo("e:" + eid);
+            Playlist.play(Playlist.current_id, playlist_item_id);
+
+contentplaybackresume
+http://t2.hulu.com/v3/potentialbugtracking/contentplaybackresume
+
+adstart
+http://t2.hulu.com/v3/playertracking/adstart
+
+
+Telling your user-agent (web browser) to use Polipo is an operation that depends on the browser. Many user-agents will transparently use Polipo if the environment variable ‘http_proxy’ points at it; e.g.
+
+     $ export http_proxy=http://localhost:8123/
+
+
+
+3.8.2 External redirectors
+
+Polipo can also use an external process (a Squid-style redirector) to determine which URLs should be redirected. The name of the redirector binary is determined from the variable redirector, and the kind of redirection generated is specified by redirectorRedirectCode, which should be 302 (the default) or 301.
+
+For example, to use Adzapper to redirect ads to an innocuous image, just set
+
+     redirector = /usr/bin/adzapper
+
+
+Recent as 2011:
+
+Video ads on Hulu not blocked
+
+https://adblockplus.org/forum/viewtopic.php?t=7839
+
+Polipo mailing list
+
+http://sourceforge.net/mailarchive/forum.php?forum_name=polipo-users
+
+
+
+
+
+ruby -r webrick/httpproxy -e 's = WEBrick::HTTPProxyServer.new(:Port
+=> 9999, :RequestCallback => Proc.new{|req,res| puts req.request_line,
+req.raw_header}); trap("INT"){s.shutdown}; s.start'
+
+------------------------------------------------------------------------ 
+Polipo approach is difficult and buggy
+
+
+IDEA.
+
+Chrome plugin
+
+monitor web traffic from hulu.com
+When commerical starts or ends, send message to localhost. A Sintra app
+that user starts. This toggle volumn on ane off
+
+
+
+Plus.Tracking
+Beacon.
+    PRODUCTION_STANDARD_HOST: "http://t2.hulu.com",
+
+    getStandardHost: function () {
+            return Beacon.production ? Beacon.PRODUCTION_STANDARD_HOST : Beacon.QA_STANDARD_HOST;
+        var url = Beacon.getStandardHost() + Beacon.STANDARD_PREFIX + Beacon.region_prefix + '/' + type + '/' + event + '?' + $H(params).toQueryString();
+        Beacon.send(url);
+ 
+
+
+ Beacon.send = function (url){
+ console.log(url);
+ pingImage(url+"&cb="+(new Date).getTime());
+ }
+
+var _rTracking = new RecommendTracking();
+
+Beacon.trackAssetImpression =  function (placementId, creativeId) {
+        alert("ad");
+        console.log("ad");
+        console.log(placemendId);
+
+        var params = {
+            placementid: placementId
+        };
+        if (creativeId != null) {
+            params.creativeid = creativeId;
+        }
+        Beacon.trackStandardBeacon(Beacon.TYPE_REVENUE, Beacon.EVENT_ASSET_IMPRESSION, params);
+};
+
+TYPE_REVENUE
+
+Beacon.trackStandardBeacon = function (type, event, data) {
+  alert("track");
+};
+
+
+
+Object.extend(Beacon, {
+    trackStandardBeacon: function (type, event, data) {
+  alert("track");
+}});
+
+function pingImage(url) {
+  alert(url);
+  console.log(url);
+    var img = new Image();
+    if (Prototype.Browser.IE) {
+        img.onload = function () {};
+    }
+    img.src = url;
+    return img;
+};
+
+
+try { __flash__toXML(dispatchPlayerEvent("playerStateChanged","INTROS")) ; } catch (e) { "<undefined/>"; }
+
+
+
+contentplaybackresume
+
+
+http://t2.hulu.com/v3/potentialbugtracking/contentplaybackresume?a=1&beaconevent=contentplaybackresume&bitrate=650&cb=1310426695706_11&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=40011284&cpidentifier=The%20Booth&currentstate=CONTENT&distro=hulu&distroplatform=hulu&embedurl=961c34a23740b1fab95d944c7656ee95&exid=1&flash=LNX%2010%2C3%2C181%2C34&language=en&os=Linux%202.6.38-8-generic-pae&packageavailability=shared&packageid=1&pendingstate=&pid=NO_MORE_RELEASES_PLEASE_40011284&planid=0&player=105047&playermode=normal&position=858441&promotion=&region=US&sessionguid=82EFCACDCC738C5F8D8E2A0C9CDCBA58&sitesessionid=6FD9A49B50C1766D0A9C1429C9ADDA34&socialidentites=&timepadding=386921&totalframes=9246&totalmemory=29372416&userbandwidth=1180&userid=0&visit=48
+
+adload
+
+flv is an ad
+
+GET http://t2.hulu.com/v3/playertracking/adload?a=1&beaconevent=adload&bitrate=650&cb=1310426771445_951&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=4001128
+4&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&dist
+
+GET http://t2.hulu.com/v3/playertracking/adload?a=1&beaconevent=adload&bitrate=650&cb=1310426771445_951&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=4001128
+4&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&dist
+
+GET http://t2.hulu.com/v3/playertracking/adload?a=1&beaconevent=adload&bitrate=650&cb=1310426771445_951&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=4001128
+4&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&dist
+
+adstart
+
+
+GET http://t2.hulu.com/v3/playertracking/adstart?a=1&beaconevent=adstart&bitrate=650&cb=1310426772274_280&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=40011284&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&distroplatform=hulu&embedurl=961c34a23740b1fab95d944c7656ee95&exid=1&flash=LNX%2010%2C3%2C181%2C34&language=en&os=Linux%202.6.38-8-generic-pae&packageavailability=shared&packageid=1&pid=NO_MORE_RELEASES_PLEASE_40011284&placementid=28920&planid=0&player=105047&playermode=normal&pod=4_1_a&position=1095948&
+
+GET http://t2.hulu.com/v3/playertracking/adload?a=1&beaconevent=adload&bitrate=650&cb=1310426771445_951&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=4001128
+4&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&dist
+
+
+GET http://t2.hulu.com/v3/playertracking/adload?a=1&beaconevent=adload&bitrate=650&cb=1310426771445_951&client=Firefox&computerguid=24E10EC7032927E584D286F8324CD64F&contentid=4001128
+4&cpidentifier=The%20Booth&creativeid=136384&distro=hulu&dist
+
+then content playback resume
+
+
+
+Determine platform
+
+ruby-1.9.2-p180 :001 > RUBY_PLATFORM
+ => "i686-linux"
+
+[choi hellenic~]$ ruby -e "puts RUBY_PLATFORM"
+x86_64-darwin10.7.0
+
+
+Control sound
+
+OSX
+sudo osascript -e "set Volume 0"
+- or to 10
+
+inux
+
+amixer set Master mute
+amixer set Master unmute
+
+
+
+Last login: Fri Jul  1 19:49:01 2011
+loading .bash_profile
+loaded .bash_aliases
+[choi spartan~]$ osascript -e "set Volume 10"
+1
+[choi spartan~]$ osascript -e "get output volume of (get Volume settings)"
+56
+[choi spartan~]$ osascript -e "set Volume output volume 10"
+[choi spartan~]$ osascript -e "set Volume output volume 60"
+

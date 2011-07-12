@@ -68,9 +68,8 @@ browsing, try one of these tips:
   save your HTTP proxy configurations as "Locations" that you can choose from a drop-down.
 * Use one web browser program for general web browsing, and another web browser 
   for HTTP proxying via port 8123.  Hulu Automuter is not the only proxy program
-  that defaults to port 8123.  [Tor][tor] and [Polipo][polipo] are two others.
+  that defaults to port 8123.  [Polipo][polipo] is another.
 
-[tor]: https://www.torproject.org/
 [polipo]: http://www.pps.jussieu.fr/~jch/software/polipo/
 
 There are also sure to be scripts out there that let you change your HTTP proxy

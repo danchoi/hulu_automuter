@@ -92,7 +92,7 @@ proxyproc = Proc.new{|req,res|
   if r =~ /adload/ 
     $stdout.puts ["ad loaded", hc.mute].join(', ')
     `#{hc.mute}`
-  elsif r =~ /resume/
+  elsif r =~ /contentplaybackresume/
     $stdout.puts ["content resuming", hc.unmute].join(', ')
     `#{hc.unmute}`
   end

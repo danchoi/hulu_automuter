@@ -57,10 +57,10 @@ hc = case RUBY_PLATFORM
 proxyproc = Proc.new{|req,res| 
   r = req.path
   if r =~ /adload/ 
-    $stdout.puts ["ad loaded", hc.mute, r].join(' | ')
+    $stdout.puts ["ad loaded", hc.mute].join(' ; ')
     `#{hc.mute}`
   elsif r =~ /resume/
-    $stdout.puts ["content resuming", hc.unmute, r].join(' | ')
+    $stdout.puts ["content resuming", hc.unmute].join(' ; ')
     `#{hc.unmute}`
   end
   nil
@@ -71,9 +71,12 @@ s = WEBrick::HTTPProxyServer.new(:Port => port,
                                  :RequestCallback => proxyproc,
                                  :AccessLog => 'webrick.log')
 trap("INT"){s.shutdown}
+
+puts "HuluAutomuter is starting on port #{port}"
+puts "Please remember to configure your web browser to use this HTTP proxy"
+puts "Press CTRL-C to stop"
+
 s.start
-
-
 
 __END__
 ----------------------------------------

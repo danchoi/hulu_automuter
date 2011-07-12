@@ -35,7 +35,7 @@ To upgrade Hulu Automuter to a newer version, just repeat the installation proce
 
 **Mac Wrapper App:** Some people have requested a Mac OS X wrapper app for
 this, for users who are intimidated by the Unix command line. This wrapper app
-should be available by the end of this week.
+should be available by the end of this week, and it will be free.
 
 ## Usage
 

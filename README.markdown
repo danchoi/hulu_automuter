@@ -103,8 +103,9 @@ Being forced to watch ads seriously degrades the whole experience of watching a
 good TV show or movie.  It's an unforgivably wasteful use of everyone's time
 and mental bandwith.
 
-I would rather pay per view or donate money directly to the shows I enjoy, if
-Hulu gave that option.  
+We need a new system.  I would rather pay per view or donate money directly to
+the shows I enjoy, if Hulu gave that option.  Again, please read Docs' blog
+post.
 
 In any case, you should be able to control your computer's volume level any way
 you see fit, even with the assistance of open source software.  Your computer and

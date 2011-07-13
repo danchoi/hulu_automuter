@@ -24,6 +24,8 @@ Benefits:
 
 ## Install
 
+Open a terminal, and type the following:
+
     gem install hulu-automuter
 
 Confirm that the installation succeeded by typing `hulu-automuter -h`.  If you

@@ -99,15 +99,18 @@ Let me point you to a [blog post by Doc Searls][docsearls].
 Think of Hulu Automuter as a tiny step toward the revolution that Doc Searls is
 talking about.
 
-Having to trade away chunks of your precious time, attention, and brain waves
-in order to watch TV shows feels clumsy and backward on many levels, including
-the human one. I would rather pay per view or donate money to the shows I
-enjoy, if Hulu gave that option.  In any case, you should be able to control
-your computer's volume level any way you see fit, even with the assistance of
-open source software you choose to download and install.  Your computer and its
-audio components belong to you -- not to Hulu, not to advertisers -- and the
-same goes for your mental concentration and attention at any point during the
-playing of a Hulu program.
+Being forced to watch ads seriously degrades the whole experience of watching a
+good TV show or movie.  It's an unforgivably wasteful use of everyone's time
+and mental bandwith.
+
+I would rather pay per view or donate money to the shows I
+enjoy, if Hulu gave that option.  
+
+In any case, you should be able to control your computer's volume level any way
+you see fit, even with the assistance of open source software you choose to
+download and install.  Your computer and its audio components belong to you --
+not to Hulu, not to advertisers -- and the same goes for your mental
+concentration and attention at any point during the playing of a Hulu program.
 
 
 ## Bug reports and feature requests

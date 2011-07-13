@@ -111,7 +111,6 @@ In any case, you should be able to control your computer's volume level any way
 you see fit, even with the assistance of open source software.  Your computer and
 its audio components belong to you -- not to Hulu, not to advertisers.  
 
-Pwn your computer && pwn your time.
 
 
 ## Bug reports and feature requests

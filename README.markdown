@@ -107,10 +107,8 @@ I would rather pay per view or donate money directly to the shows I enjoy, if
 Hulu gave that option.  
 
 In any case, you should be able to control your computer's volume level any way
-you see fit, even with the assistance of open source software you choose to
-download and install.  Your computer and its audio components belong to you --
-not to Hulu, not to advertisers -- and the same goes for your mental
-concentration and attention at any point during the playing of a Hulu program.
+you see fit, even with the assistance of open source software.  Your computer,
+its audio components belong to you -- not to Hulu, not to advertisers.  
 
 
 ## Bug reports and feature requests

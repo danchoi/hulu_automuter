@@ -104,7 +104,7 @@ good TV show or movie.  It's an unforgivably wasteful use of everyone's time
 and mental bandwith.
 
 We need a new system.  I would rather pay per view or donate money directly to
-the shows I enjoy, if Hulu gave that option.  Again, please read Docs' blog
+the shows I enjoy, if Hulu gave that option.  Again, please read Doc's blog
 post.
 
 In any case, you should be able to control your computer's volume level any way

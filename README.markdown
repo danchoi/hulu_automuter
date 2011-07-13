@@ -96,21 +96,12 @@ Let me point you to a [blog post by Doc Searls][docsearls].
 
 [docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 
-Think of Hulu Automuter as a tiny step toward the revolution that Doc Searls is
-talking about.
-
-Being forced to watch ads seriously degrades the whole experience of watching a
-good TV show or movie.  It's an extremely wasteful use of everyone's time
-and mental bandwith.
+Being forced to watch ads degrades the whole experience of watching a good TV
+show or movie.  It's an extremely wasteful use of everyone's time and mental
+bandwith.
 
 We need a new system.  I would rather pay per view or donate money directly to
-the shows I enjoy, if Hulu gave that option.  Again, please read Doc's blog
-post.
-
-In any case, you should be able to control your computer's volume level any way
-you see fit, even with the assistance of open source software.  Your computer and
-its audio components belong to you -- not to Hulu, not to advertisers.  
-
+the shows I enjoy, if Hulu gave that option.  
 
 
 ## Bug reports and feature requests

@@ -100,7 +100,7 @@ Think of Hulu Automuter as a tiny step toward the revolution that Doc Searls is
 talking about.
 
 Being forced to watch ads seriously degrades the whole experience of watching a
-good TV show or movie.  It's an unforgivably wasteful use of everyone's time
+good TV show or movie.  It's an extremely wasteful use of everyone's time
 and mental bandwith.
 
 We need a new system.  I would rather pay per view or donate money directly to

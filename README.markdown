@@ -100,9 +100,9 @@ Let me point you to a [blog post by Doc Searls][docsearls].
 
 [docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 
-Being forced to watch ads degrades the whole experience of watching a good TV
-show or movie.  It's an extremely wasteful use of everyone's time and mental
-bandwith.
+Being forced to watch ads you aren't interested in degrades the whole
+experience of watching a good TV show or movie.  It's an extremely wasteful use
+of everyone's time and mental bandwith.
 
 We need a new system.  I would rather pay per view or donate money directly to
 the shows I enjoy, if Hulu gave that option.  

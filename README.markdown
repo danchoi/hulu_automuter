@@ -9,9 +9,10 @@ at Hulu.com.
 Benefits:
 
 * You won't have to manually toggle your sound to mute those awesome commercials
-* The sound comes back on right on cue
-* Hulu still gets their ad impressions registered: it's as if you paid attention to them
+* When ads are finished, the sound comes back on right on cue 
+* Hulu ads are often miscalibrated and way too loud -- but not with the Automuter
 * If you see an ad that looks interesting, just unmute your volume
+* Hulu still gets their ad impressions registered: it's as if you paid attention to them
 
 
 ## Prerequisites

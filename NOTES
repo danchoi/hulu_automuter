@@ -227,3 +227,47 @@ If request size is too large:
 
 http://railsforum.com/viewtopic.php?id=40426
 
+http://fossplanet.com/f14/ruby-webrick-httpproxy-headers-25742/
+
+
+
+Youtube
+
+- -> http://tc.v4.cache8.c.youtube.com/videoplayback?fexp=909318%2C902310%2C910207&sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Calgorithm%2Cburst%2Cfactor%2Coc%3AU0hQRVdSUl9FSkNOMF9PTFZF&algorithm=throttle-factor&itag=34&id=4a5f4630e4daaad7&sver=3&expire=1310774400&factor=1.25&ipbits=0&burst=40&ip=0.0.0.0&key=yt1&signature=066D829E1D44F2D92AA0DA4862DB35C791FD79CF.47D9667B89783163E058E684B83A8CE22752B5F5&playretry=1
+
+
+
+- -> http://s.youtube.com/s?erc=1&playerw=640&rt=53.304&screenw=1280&playerh=363&fmt=34&nsivblmax=2.080&scoville=1&len=87&hbd=4863116&vid=RtFXzoyMAA6wbXmfpjysGeujvCpwwdQ7C&fs=0&et=0.093&st=0.093&nsivbblmin=66588.000&ahoffset=27&fv=LNX%2010%2C3%2C181%2C34&vq=auto&nsipbps=78678.15860215054&h=360&sdetail=f%3Atopvideos_music%2Cp%3A%2F&hbt=15.336&playback=1&plid=AASoHqghqjCK9axK&decoding=&feature=topvideos_music&w=480&sourceid=y&fexp=910207,909318,902310&nsivblc=1&smoothing=1&bc=5332806&nsivblmin=2.080&rendering=software&docid=Sl9GMOTaqtc&nsivbblmax=66588.000&nsiablmax=2.020&csipt=watch&cr=US&nsivblmean=2.080&hl=en_US&nsiablmin=2.020&nsiabblmean=35603.000&el=detailpage&nsivbblmean=66588.000&nsiablmean=2.020&nsiabblc=1&nsiablc=1&nsiabblmin=35603.000&cfps=0&nsiabblmax=35603.000&referrer=http%3A%2F%2Fwww.youtube.com%2F&nsivbblc=1&screenh=800&ns=yt
+
+
+Youtube errors
+
+
+
+[2011-07-15 13:10:30] ERROR WEBrick::HTTPStatus::RequestURITooLarge
+[2011-07-15 13:10:30] ERROR TypeError: can't convert nil into an exact number
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `-'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `setup_params'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:164:in `access_log'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:87:in `run'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+[2011-07-15 13:10:30] ERROR WEBrick::HTTPStatus::RequestURITooLarge
+[2011-07-15 13:10:30] ERROR TypeError: can't convert nil into an exact number
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `-'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `setup_params'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:164:in `access_log'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:87:in `run'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+[2011-07-15 13:10:30] ERROR WEBrick::HTTPStatus::RequestURITooLarge
+[2011-07-15 13:10:30] ERROR TypeError: can't convert nil into an exact number
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `-'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/accesslog.rb:42:in `setup_params'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:164:in `access_log'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:87:in `run'
+        /home/choi/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/csi
+/ad/l/1
+
+
+
+

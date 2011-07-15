@@ -97,7 +97,7 @@ If you know of more, feel free to let me know, or add it to the
 A good question. 
 
 Let me point you to a blog post by Doc Searls: 
-[Why online advertising sucks, and is a bubble](http://blogs.law.harvard.edu/doc/2008/10/21/why-online-advertising-sucks-and-is-a-bubble/)
+[Why online advertising sucks, and is a bubble](http://blogs.law.harvard.edu/doc/2008/10/21/why-online-advertising-sucks-and-is-a-bubble/).
 
 Being forced to watch ads you aren't interested in degrades the whole
 experience of watching a good TV show or movie.  It's an wasteful use

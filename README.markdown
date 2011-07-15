@@ -96,9 +96,9 @@ If you know of more, feel free to let me know, or add it to the
 
 A good question. 
 
-Let me point you to a bunch of [blog posts by Doc Searls][doc] on the topic.
+Let me point you to a [blog post by Doc Searls][doc] on the topic.
 
-[doc]:http://blogs.law.harvard.edu/doc/category/vrm/
+[doc]:http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
 
 Being forced to watch ads you aren't interested in degrades the whole
 experience of watching a good TV show or movie.  It's an wasteful use

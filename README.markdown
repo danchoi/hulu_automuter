@@ -96,12 +96,12 @@ If you know of more, feel free to let me know, or add it to the
 
 A good question. 
 
-Let me point you to a [blog post by Doc Searls][docsearls].
+Let me point you to a blog post by Doc Searls:
 
-[docsearls]: http://blogs.law.harvard.edu/doc/2007/08/09/looking-toward-life-beyond-advertising/
+[Why online advertising sucks, and is a bubble](http://blogs.law.harvard.edu/doc/2008/10/21/why-online-advertising-sucks-and-is-a-bubble/)
 
 Being forced to watch ads you aren't interested in degrades the whole
-experience of watching a good TV show or movie.  It's an extremely wasteful use
+experience of watching a good TV show or movie.  It's an wasteful use
 of everyone's time and mental bandwith.
 
 We need a new system.  I would rather pay per view or donate money directly to

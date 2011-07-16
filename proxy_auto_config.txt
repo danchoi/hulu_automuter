@@ -1,0 +1,632 @@
+   #Calomel.org RSS Feed
+
+   calomel.org
+
+   ____________________ Search Calomel.org
+
+Proxy Auto Config for Firefox (PAC)
+
+   Calomel.org Home Page     RSS Feed
+   A PAC file is a set of instructions telling a client browser what paths
+   to take when a certain condition are met. You could direct a internal
+   browser to use a proxy server to access certain restricted internal
+   websites for example. You can also filter URLs and use the PAC file as
+   a simple anti-ad or anti-porn filter redirecting filtered URLs to
+   localhost.
+
+Why would I need a proxy auto config (PAC) file? How can it help me?
+
+   Controlling how users across an organization connect to the Internet
+   and intranets can be a tricky task to administer. You could have
+   clients at different physical locations which all need to traverse
+   different proxies, internal sites you need them to access directly or
+   roaming users who sometimes work from their own connections at home.
+
+   If you're looking to block on-line site ads and offensive Web content,
+   you don't need to buy special software -- instead, you can use a PAC
+   file for any browser. Few web sites host their own banner ads.
+   Typically they sign up with ad servers that deliver content and track
+   views and clicks. Thus you can block most web site ads by blocking a
+   fairly limited number of ad servers. You can also block other sites
+   serving objectionable content.
+
+   This is where a PAC (proxy auto config and sometime referred to as a
+   proxy access control) file comes in. With this one file you can control
+   how all of your clients access the web. Most of the modern browsers
+   will use a PAC file without any problems.
+
+     A proxy auto-config (PAC) file defines how web browsers and other
+     user agents can automatically choose the appropriate proxy server
+     (access method) for fetching a given URL.
+
+     A PAC file contains a JavaScript function "FindProxyForURL(url,
+     host)". This function returns a string with one or more access
+     method specifications. These specifications cause the user agent to
+     use a particular proxy server or to connect directly.
+
+     Multiple specifications provide a fallback when a proxy fails to
+     respond. The browser fetches this PAC file before retrieving other
+     pages. The URL of the PAC file is either configured manually or
+     determined automatically by the Web Proxy Autodiscovery Protocol.
+     Wikipedia Proxy Auto Config
+
+   Proxy Automatic Configuration (PAC) files were introduced by Netscape
+   with the release of JavaScript back in 1996, and all modern browsers
+   support them, including Firefox, Internet Explorer and Opera. PAC files
+   consist of JavaScript defining the function FindProxyForURL(url, host),
+   and are saved with the file type .pac. The return value for this
+   function says whether to use a proxy for this URL, a SOCKS proxy, or
+   connect directly. If your browser is configured to use a PAC file, the
+   FindProxyForURL function is called every time your browser attempts to
+   access a URL, even if JavaScript is turned off in your browser.
+
+   Lets take a look at a few examples.
+
+Example 1: Simple proxy
+
+   This is the simplest PAC file. It will direct the client to use the
+   proxy server (proxy = "PROXY 192.168.1.100:8080") when they try to
+   access the URL "*.domain.home" or "*.whatsmyip.org". Any other URL
+   requests would be directly requested without the use of a proxy server.
+   You are welcome to copy-paste this example.
+// Calomel.org Proxy Auto-Config
+//
+
+//
+// Define the network paths (direct, proxy and deny)
+//
+
+// Default connection
+var direct = "DIRECT";
+
+// Alternate Proxy Server
+var proxy = "PROXY 192.168.1.100:8080";
+
+// Default localhost for denied connections
+var deny = "PROXY 127.0.0.1:65535";
+
+//
+// Proxy Logic
+//
+
+function FindProxyForURL(url, host)
+{
+
+// Use Proxy?
+if (dnsDomainIs(host, ".domain.home")
+  || dnsDomainIs(host, ".whatsmyip.org"))
+  { return proxy; }
+ else
+  { return direct; }
+
+// Default DENY
+{ return deny; }
+
+}
+
+Example 2: Block Ads and Porn with a Proxy Auto-Config PAC file
+
+   This PAC files builds upon the first example. Clients will be directed
+   the proxy server (proxy = "PROXY 192.168.1.100:8080") when they try to
+   access the URL "*.domain.home" or "*.whatsmyip.org" and any other URL
+   requests would be directly requested. We then add the ability to deny
+   access to URL we do not want the client to access.
+
+   In this example we also have a long list of AD and adult sites we do
+   not want our users to access. When a URL listed in the "Anti-ads and
+   Anti-Porn" section is called on the request is redirected to localhost
+   port 65535. In essence the request will always fail and the browser
+   will immediately get a tcp reset. You are welcome to copy-paste this
+   example.
+// Calomel.org Proxy Auto-Config
+//
+
+//
+// Define the network paths (direct, proxy and deny)
+//
+
+// Default connection
+var direct = "DIRECT";
+
+// Alternate Proxy Server
+var proxy = "PROXY 192.168.1.100:8080";
+
+// Default localhost for denied connections
+var deny = "PROXY 127.0.0.1:65535";
+
+//
+// Proxy Logic
+//
+
+function FindProxyForURL(url, host)
+{
+
+// Use Proxy?
+if (dnsDomainIs(host, ".domain.home")
+  || dnsDomainIs(host, ".whatsmyip.org"))
+  { return proxy; }
+
+// Anti-ads and Anti-porn
+if (dnsDomainIs(host, ".doubleclick.com")
+  || dnsDomainIs(host, ".doubleclick.net")
+  || dnsDomainIs(host, ".googlesyndication.com")
+  || dnsDomainIs(host, "google-analytics.com")
+  || dnsDomainIs(host, ".rpts.net")
+  || dnsDomainIs(host, ".crossmediaservices.com")
+  || dnsDomainIs(host, ".safeclick.com")
+  || dnsDomainIs(host, ".2mdn.net")
+  || dnsDomainIs(host, ".2mdn.com")
+  || dnsDomainIs(host, ".globaltrack.com")
+  || dnsDomainIs(host, ".burstnet.com")
+  || dnsDomainIs(host, ".adbureau.net")
+  || dnsDomainIs(host, ".targetnet.com")
+  || dnsDomainIs(host, ".humanclick.com")
+  || dnsDomainIs(host, ".linkexchange.com")
+  || dnsDomainIs(host, ".fastclick.com")
+  || dnsDomainIs(host, ".fastclick.net")
+  || dnsDomainIs(host, ".admonitor.com")
+  || dnsDomainIs(host, ".focalink.com")
+  || dnsDomainIs(host, ".websponsors.com")
+  || dnsDomainIs(host, ".advertising.com")
+  || dnsDomainIs(host, ".cybereps.com")
+  || dnsDomainIs(host, ".postmasterdirect.com")
+  || dnsDomainIs(host, ".mediaplex.com")
+  || dnsDomainIs(host, ".adtegrity.com")
+  || dnsDomainIs(host, ".bannerbank.ru")
+  || dnsDomainIs(host, ".bannerspace.com")
+  || dnsDomainIs(host, ".theadstop.com")
+  || dnsDomainIs(host, ".l90.com")
+  || dnsDomainIs(host, ".webconnect.net")
+  || dnsDomainIs(host, ".avenuea.com")
+  || dnsDomainIs(host, ".flycast.com")
+  || dnsDomainIs(host, ".engage.com")
+  || dnsDomainIs(host, ".imgis.com")
+  || dnsDomainIs(host, ".datais.com")
+  || dnsDomainIs(host, ".link4ads.com")
+  || dnsDomainIs(host, ".247media.com")
+  || dnsDomainIs(host, ".hightrafficads.com")
+  || dnsDomainIs(host, ".tribalfusion.com")
+  || dnsDomainIs(host, ".rightserve.net")
+  || dnsDomainIs(host, ".admaximize.com")
+  || dnsDomainIs(host, ".valueclick.com")
+  || dnsDomainIs(host, ".adlibris.se")
+  || dnsDomainIs(host, ".vibrantmedia.com")
+  || dnsDomainIs(host, ".coremetrics.com")
+  || dnsDomainIs(host, ".vx2.cc")
+  || dnsDomainIs(host, ".webpower.com")
+  || dnsDomainIs(host, ".everyone.net")
+  || dnsDomainIs(host, ".zedo.com")
+  || dnsDomainIs(host, ".bigbangmedia.com")
+  || dnsDomainIs(host, ".ad-annex.com")
+  || dnsDomainIs(host, ".iwdirect.com")
+  || dnsDomainIs(host, ".adlink.de")
+  || dnsDomainIs(host, ".bidclix.net")
+  || dnsDomainIs(host, ".webclients.net")
+  || dnsDomainIs(host, ".linkcounter.com")
+  || dnsDomainIs(host, ".sitetracker.com")
+  || dnsDomainIs(host, ".adtrix.com")
+  || dnsDomainIs(host, ".netshelter.net")
+  || dnsDomainIs(host, ".rn11.com")
+  || dnsDomainIs(host, ".ru4.com")
+  || dnsDomainIs(host, "rightmedia.net")
+  || dnsDomainIs(host, ".casalemedia.com")
+  || dnsDomainIs(host, ".casalemedia.com")
+  || dnsDomainIs(host, "quantserve.com")
+  || dnsDomainIs(host, "crwdcntrl.net")
+  || dnsDomainIs(host, ".commission-junction.com")
+  || dnsDomainIs(host, ".qkimg.net")
+  || dnsDomainIs(host, ".bluestreak.com")
+  || dnsDomainIs(host, ".virtumundo.com")
+  || dnsDomainIs(host, ".treeloot.com")
+  || dnsDomainIs(host, ".memberprize.com")
+  || dnsDomainIs(host, ".internetfuel.net")
+  || dnsDomainIs(host, ".internetfuel.com")
+  || dnsDomainIs(host, ".peoplecaster.com")
+  || dnsDomainIs(host, ".cupidsdatabase.com")
+  || dnsDomainIs(host, ".automotive-times.com")
+  || dnsDomainIs(host, ".healthy-lifetimes.com")
+  || dnsDomainIs(host, ".us-world-business.com")
+  || dnsDomainIs(host, ".internet-2-web.com")
+  || dnsDomainIs(host, ".my-job-careers.com")
+  || dnsDomainIs(host, ".freeonline.com")
+  || dnsDomainIs(host, ".exitfuel.com")
+  || dnsDomainIs(host, ".netbroadcaster.com")
+  || dnsDomainIs(host, ".spaceports.com")
+  || dnsDomainIs(host, ".mircx.com")
+  || dnsDomainIs(host, ".exitchat.com")
+  || dnsDomainIs(host, ".atdmt.com")
+  || dnsDomainIs(host, ".partner2profit.com")
+  || dnsDomainIs(host, ".centrport.net")
+  || dnsDomainIs(host, ".centrport.com")
+  || dnsDomainIs(host, ".rampidads.com")
+  || dnsDomainIs(host, "commonwealth.riddler.com")
+  || dnsDomainIs(host, "banner.freeservers.com")
+  || dnsDomainIs(host, "usads.futurenet.com")
+  || dnsDomainIs(host, "banners.egroups.com")
+  || dnsDomainIs(host, "ngadclient.hearme.com")
+  || dnsDomainIs(host, "affiliates.allposters.com")
+  || dnsDomainIs(host, "adincl.go2net.com")
+  || dnsDomainIs(host, "webads.bizservers.com")
+  || dnsDomainIs(host, ".addserv.com")
+  || dnsDomainIs(host, ".falkag.net")
+  || dnsDomainIs(host, ".interclick.com")
+  || dnsDomainIs(host, ".atwola.com")
+  || dnsDomainIs(host, "toolbar.aol.com")
+  || dnsDomainIs(host, ".adsdk.com")
+  || dnsDomainIs(host, "remotead.cnet.com")
+  || dnsDomainIs(host, ".1st-dating.com")
+  || dnsDomainIs(host, ".mousebucks.com")
+  || dnsDomainIs(host, ".yourfreedvds.com")
+  || dnsDomainIs(host, ".popupsavings.com")
+  || dnsDomainIs(host, ".popupmoney.com")
+  || dnsDomainIs(host, ".popuptraffic.com")
+  || dnsDomainIs(host, ".popupnation.com")
+  || dnsDomainIs(host, ".infostart.com")
+  || dnsDomainIs(host, ".popupad.net")
+  || dnsDomainIs(host, ".usapromotravel.com")
+  || dnsDomainIs(host, ".goclick.com")
+  || dnsDomainIs(host, ".trafficwave.net")
+  || dnsDomainIs(host, ".popupad.net")
+  || dnsDomainIs(host, ".paypopup.com")
+  || dnsDomainIs(host, ".webtrendslive.com")
+  || dnsDomainIs(host, ".wtlive.com")
+  || dnsDomainIs(host, ".web-stat.com")
+  || dnsDomainIs(host, ".superstats.com")
+  || dnsDomainIs(host, ".allhits.ru")
+  || dnsDomainIs(host, ".list.ru")
+  || dnsDomainIs(host, ".counted.com")
+  || dnsDomainIs(host, ".rankyou.com")
+  || dnsDomainIs(host, ".clickcash.com")
+  || dnsDomainIs(host, ".clickbank.com")
+  || dnsDomainIs(host, ".paycounter.com")
+  || dnsDomainIs(host, ".cashcount.com")
+  || dnsDomainIs(host, ".clickedyclick.com")
+  || dnsDomainIs(host, ".clickxchange.com")
+  || dnsDomainIs(host, ".sitestats.com")
+  || dnsDomainIs(host, ".site-stats.com")
+  || dnsDomainIs(host, ".hitbox.com")
+  || dnsDomainIs(host, ".exitdirect.com")
+  || dnsDomainIs(host, ".realtracker.com")
+  || dnsDomainIs(host, ".etracking.com")
+  || dnsDomainIs(host, ".livestat.com")
+  || dnsDomainIs(host, ".spylog.com")
+  || dnsDomainIs(host, ".freestats.com")
+  || dnsDomainIs(host, ".addfreestats.com")
+  || dnsDomainIs(host, ".topclicks.net")
+  || dnsDomainIs(host, ".mystat.pl")
+  || dnsDomainIs(host, ".hitz4you.de")
+  || dnsDomainIs(host, ".hitslink.com")
+  || dnsDomainIs(host, ".thecounter.com")
+  || dnsDomainIs(host, ".roiservice.com")
+  || dnsDomainIs(host, ".overture.com")
+  || dnsDomainIs(host, ".xiti.com")
+  || dnsDomainIs(host, ".cj.com")
+  || dnsDomainIs(host, ".anrdoezrs.net")
+  || dnsDomainIs(host, ".hey.it")
+  || dnsDomainIs(host, ".ppctracking.net")
+  || dnsDomainIs(host, ".darkcounter.com")
+  || dnsDomainIs(host, ".2o7.com")
+  || dnsDomainIs(host, ".2o7.net")
+  || dnsDomainIs(host, ".gostats.com")
+  || dnsDomainIs(host, ".everstats.com")
+  || dnsDomainIs(host, ".onestat.com")
+  || dnsDomainIs(host, ".statcounter.com")
+  || dnsDomainIs(host, ".trafic.ro")
+  || dnsDomainIs(host, ".exitexchange.com")
+  || dnsDomainIs(host, "clicktorrent.info")
+  || dnsDomainIs(host, "ventimedia.com")
+  || dnsDomainIs(host, ".clickability.com")
+  || dnsDomainIs(host, ".savethis.com")
+  || dnsDomainIs(host, ".extremetracking.com")
+  || dnsDomainIs(host, ".extreme-dm.com")
+  || dnsDomainIs(host, ".netster.com")
+  || dnsDomainIs(host, ".searchmarketing.com")
+  || dnsDomainIs(host, ".friendgreetings.com")
+  || dnsDomainIs(host, ".permissionedmedia.com")
+  || dnsDomainIs(host, ".searchbarcash.com")
+  || dnsDomainIs(host, ".zoomerang.com")
+  || dnsDomainIs(host, ".quizrocket.com")
+  || dnsDomainIs(host, ".aceshigh.com")
+  || dnsDomainIs(host, ".idealcasino.net")
+  || dnsDomainIs(host, ".casinobar.net")
+  || dnsDomainIs(host, ".casinoionair.com")
+  || dnsDomainIs(host, ".licensed-collectibles.com")
+  || dnsDomainIs(host, ".webdesignprofessional.com")
+  || dnsDomainIs(host, ".offshoreclicks.com"))
+  { return deny; }
+ else
+  { return direct; }
+
+// Default DENY
+{ return deny; }
+
+}
+
+How do configure my client to use the Proxy Auto-Config PAC file ?
+
+   First, you need to make a copy of the PAC file you want to use. Then
+   save it locally, lets say as calomel.pac. Just remember the path you
+   save the pac file to so you can enter that path into the browser config
+   as shown below.
+
+   NOTE: You can also put this pac file on a web server and have your
+   users retrieve it over the network. This method is significantly easier
+   to manage when you have more than just a few users.
+
+   Most modern browsers have the ability to use a proxy auto-config file.
+   Here are few examples of how to configure the Mozilla products.
+
+Firefox v3.x or above: automatic proxy configuration URL:
+
+     To use a PAC file with Firefox use the following instructions:
+    1. Edit
+    2. Preferences
+    3. Advanced
+    4. Network (tab)
+    5. Connection Settings (button)
+    6. automatic proxy configuration URL:
+    7. ... enter the file path or URL into the blank like
+       /tools/calomel.pac or http://example/calomel.pac
+
+Firefox v2.x or above: automatic proxy configuration URL:
+
+     To use a PAC file with Firefox use the following instructions:
+    1. Tools
+    2. Options
+    3. General
+    4. Connection
+    5. Connection Settings (button)
+    6. ... enter the file path or URL into the blank like
+       /tools/calomel.pac or http://example/calomel.pac
+
+SeaMonkey: automatic proxy configuration URL:
+
+     To use a PAC file with SeaMonkey use the following instructions:
+    1. Edit
+    2. Preferences
+    3. Advanced
+    4. Proxies
+    5. ... enter the file path or URL into the blank like
+       /tools/calomel.pac or http://example/calomel.pac
+
+Testing the PAC file
+
+   Now that you have a PAC file you can save it locally or publish it to
+   HTTP server accessible to your users.
+
+   If you are going to use the PAC file locally then just save it and make
+   note of the directory you place it in. For example, lets say you are
+   using the PAC file from example number 2 above and saved it to
+   /somedir/calomel.pac.
+
+   Or, you can put the file onto a HTTP server and serve out the PAC file
+   over the network. This is really helpful if you have more than just a
+   few users. Lets say the web server and file are called
+   http://homelan/calomel.pac.
+
+   Next, you would add the path into the "automatic proxy configuration
+   URL" in your browser.
+
+   Now, you need to goto a URL that will trigger a rule in the PAC file to
+   make sure it works. If you used "example 2" from above then you may
+   have notice that a URL containing the string "doubleclick" is denied.
+   Try to goto http://www.doubleclick.com/ and see if the connection is
+   denied. If so then the anti-ad rules are working.
+
+   That's about it. You can add more URLs or custom rules as needed. Just
+   make sure to test everything thoroughly. You do not want to DOS your
+   users due to a typo.
+
+What Predefined and Environment Functions can be used in the PAC file ?
+
+   This is a listing with examples of the functions that you can use in
+   your own PAC files. Not all functions are supported by all browsers, so
+   it is best to test thoroughly before distributing your changes.
+
+isPlainHostName(host)
+
+     * host the hostname from the URL (excluding port number).
+     * True if there is no domain name in the hostname (no dots).
+
+isPlainHostName("www")
+  is true.
+isPlainHostName("www.example.com")
+  is false.
+
+dnsDomainIs(host, domain)
+
+     * host is the hostname from the URL
+     * domain is the domain name to test the hostname against.
+     * Returns true if the domain of hostname matches
+
+dnsDomainIs("www.example.com", ".example.com")
+    is true.
+dnsDomainIs("www", ".example.com")
+    is false.
+dnsDomainIs("www.tcom.com", ".example.com")
+    is false.
+
+localHostOrDomainIs(host, hostdom)
+
+     * host the hostname from the URL.
+     * hostdom fully qualified hostname to match against.
+     * Is true if the hostname matches exactly the specified hostname, or
+       if there is no domain name part in the hostname, but the
+       unqualified hostname matches.
+
+localHostOrDomainIs("www.example.com", "www.example.com")
+    is true (exact match).
+localHostOrDomainIs("www", "www.example.com")
+    is true (hostname match, domain not specified).
+localHostOrDomainIs("www.mcom.com", "www.example.com")
+    is false (domain name mismatch).
+localHostOrDomainIs("home.example.com", "www.example.com")
+    is false (hostname mismatch).
+
+isResolvable(host)
+
+     * host is the hostname from the URL.
+     * Tries to resolve the hostname. Returns true if succeeds.
+
+isResolvable("www.example.com")
+    is true (unless DNS fails to resolve it due to a firewall or some other reas
+on).
+isResolvable("bogus.domain.foobar")
+    is false.
+
+isInNet(host, pattern, mask)
+
+     * host a DNS hostname, or IP address. If a hostname is passed, it
+       will be resolved into an IP address by this function.
+     * pattern an IP address pattern in the dot-separated format
+     * mask for the IP address pattern informing which parts of the IP
+       address should be matched against. 0 means ignore, 255 means match.
+     * True if the IP address of the host matches the specified IP address
+       pattern. Pattern and mask specification is done the same way as for
+       SOCKS configuration.
+
+isInNet(host, "192.168.249.79", "255.255.255.255")
+    is true if the IP address of host matches exactly 192.168.249.79.
+isInNet(host, "192.168.0.0", "255.255.0.0")
+    is true if the IP address of the host matches 192.168.*.*.
+
+dnsResolve(host)
+
+     * host hostname to resolve
+     * Resolves the given DNS hostname into an IP address, and returns it
+       in the dot separated format as a string.
+
+dnsResolve("home.example.com")
+    returns the string "192.168.249.79".
+
+myIpAddress()
+
+     * Returns the IP address of the host that the Navigator is running
+       on, as a string in the dot-separated integer format.
+
+myIpAddress()
+    would return the string "192.168.249.79" if you were running the Navigator o
+n that host.
+
+dnsDomainLevels(host)
+
+     * host is the hostname from the URL.
+     * Returns the number (integer) of DNS domain levels (number of dots)
+       in the hostname.
+
+dnsDomainLevels("www")
+    returns 0.
+dnsDomainLevels("www.example.com")
+    returns 2.
+
+shExpMatch(str, shexp)
+
+     * str is any string to compare (e.g. the URL, or the hostname).
+     * shexp is a shell expression to compare against.
+     * Returns true if the string matches the specified shell expression.
+
+shExpMatch("http://home.example.com/people/ari/index.html", "*/ari/*")
+    is true.
+shExpMatch("http://home.example.com/people/montulli/index.html", "*/ari/*")
+    is false.
+
+weekdayRange(wd1, wd2, gmt)
+
+     * wd1 and wd2 are one of the weekday strings: SUN MON TUE WED THU FRI
+       SAT
+     * gmt is either the string: GMT or is left out.
+     * Only the first parameter is mandatory. Either the second, the
+       third, or both may be left out. If only one parameter is present,
+       the function yields a true value on the weekday that the parameter
+       represents. If the string "GMT" is specified as a second parameter,
+       times are taken to be in GMT, otherwise in local timezone. If both
+       wd1 and wd1 are defined, the condition is true if the current
+       weekday is in between those two weekdays. Bounds are inclusive. If
+       the "GMT" parameter is specified, times are taken to be in GMT,
+       otherwise the local timezone is used.
+
+weekdayRange("MON", "FRI")
+    true Monday through Friday (local timezone).
+weekdayRange("MON", "FRI", "GMT")
+    same as above, but GMT timezone.
+weekdayRange("SAT")
+    true on Saturdays local time.
+weekdayRange("SAT", "GMT")
+    true on Saturdays GMT time.
+weekdayRange("FRI", "MON")
+    true Friday through Monday (note, order does matter!).
+
+dateRange(day1, month1, day2, month2)
+
+     * day is the day of month between 1 and 31 (as an integer).
+     * month is one of the month strings: JAN FEB MAR APR MAY JUN JUL AUG
+       SEP OCT NOV DEC
+     * year is the full year number, for example 1995 (but not 95).
+       Integer.
+     * gmt is either the string "GMT", which makes time comparison occur
+       in GMT timezone; if left unspecified, times are taken to be in the
+       local timezone. Even though the above examples don't show, the
+       "GMT" parameter can be specified in any of the 9 different call
+       profiles, always as the last parameter.
+     * If only a single value is specified (from each category: day,
+       month, year), the function returns a true value only on days that
+       match that specification. If both values are specified, the result
+       is true between those times, including bounds.
+
+dateRange(1)
+    true on the first day of each month, local timezone.
+dateRange(1, "GMT")
+    true on the first day of each month, GMT timezone.
+dateRange(1, 15)
+    true on the first half of each month.
+dateRange(24, "DEC")
+    true on 24th of December each year.
+dateRange(24, "DEC", 1995)
+    true on 24th of December, 1995.
+dateRange("JAN", "MAR")
+    true on the first quarter of the year.
+dateRange(1, "JUN", 15, "AUG")
+    true from June 1st until August 15th, each year (including June 1st and Augu
+st 15th).
+dateRange(1, "JUN", 15, 1995, "AUG", 1995)
+    true from June 1st, 1995, until August 15th, same year.
+dateRange("OCT", 1995, "MAR", 1996)
+    true from October 1995 until March 1996 (including the entire month of Octob
+er 1995 and March 1996).
+dateRange(1995)
+    true during the entire year 1995.
+dateRange(1995, 1997)
+    true from beginning of year 1995 until the end of year 1997.
+
+timeRange(hour1, hour2)
+
+     * hour is the hour from 0 to 23. (0 is midnight, 23 is 11 pm.)
+     * min minutes from 0 to 59.
+     * sec seconds from 0 to 59.
+
+
+timerange(12)
+    true from noon to 1pm.
+timerange(12, 13)
+    same as above.
+timerange(12, "GMT")
+    true from noon to 1pm, in GMT timezone.
+timerange(9, 17)
+    true from 9am to 5pm.
+timerange(8, 30, 17, 00)
+    true from 8:30am to 5:00pm.
+timerange(0, 0, 0, 0, 0, 30)
+    true between midnight and 30 seconds past midnight.
+
+   Questions, comments, or suggestions? Contact Calomel.org
+   Calomel.org Home Page :: Open Source Research and Reference
+
+   calomel.org
+http://feeds.feedburner.com/CalomelorgOpenSourceResearchAndReference
+https://calomel.org/
+https://calomel.org/
+http://feeds.feedburner.com/CalomelorgOpenSourceResearchAndReference
+http://en.wikipedia.org/wiki/Proxy_auto-config
+https://calomel.org/calomel_at.html
+https://calomel.org/
+https://calomel.org/

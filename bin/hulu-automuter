@@ -92,7 +92,7 @@ proxyproc = Proc.new{|req,res|
   if r =~ /adload/ || r =~ /revenue\/(request|start)/ || req.query =~ /adstartvolume=/
     $stdout.puts ["ad loaded", hc.mute].join(', ')
     `#{hc.mute}`
-  elsif r =~ /contentplaybackresume/ || r =~ /playback\/(start|position)/ || r =~ /revenue\/end/
+  elsif r =~ /contentplaybackresume/ || r =~ /playback\/(start|position)/ # || r =~ /revenue\/end/
     $stdout.puts ["content resuming", hc.unmute].join(', ')
     `#{hc.unmute}`
   end

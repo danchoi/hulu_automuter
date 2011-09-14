@@ -74,8 +74,8 @@ This will probbaly work if you use your computer's speakers or headphone
 jack. If you use USB speakers, you may need to change this default by 
 setting the AUTOMUTE_COMMAND environment variable.
 
-  export AUTOMUTE_COMMAND="amixer -c 1 set PCM mute"
-  hulu-automuter
+    export AUTOMUTE_COMMAND="amixer -c 1 set PCM mute"
+    hulu-automuter
 
 
 ## Tips

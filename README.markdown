@@ -64,6 +64,19 @@ browser.
 
 Press `CTRL-c` to stop hulu-automuter.
 
+## For Linux Audio
+
+On Linux, the default amixer mute command is 
+
+  amixer set Master mute
+
+This will probbaly work if you use your computer's speakers or headphone
+jack. If you use USB speakers, you may need to change this default by 
+setting the AUTOMUTE_COMMAND environment variable.
+
+  export AUTOMUTE_COMMAND="amixer -c 1 set PCM mute"
+  hulu-automuter
+
 
 ## Tips
 
